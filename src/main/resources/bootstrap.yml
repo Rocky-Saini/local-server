@@ -1,0 +1,96 @@
+spring:
+  application:
+    name: local-server
+  cloud:
+    config:
+      uri: http://localhost:8090/config-server #where the config-service is running
+      fail-fast: true #the service will not run if it can't reach the config-service
+      password: admin@123 #password of the config-service
+      username: admin #username of the config-service
+      enabled: true
+  profiles:
+    active: dev
+  mvc:
+    pathmatch:
+      matching-strategy: path-pattern-parser
+  http:
+   multipart:
+     location: /tmp/panasonic/
+  servlet:
+    multipart:
+      max-file-size: 10240MB
+      max-request-size: 10240MB
+      file-size-threshold: 5MB
+      location: /var/opt/panasonic
+
+application:
+  version: 0.1.950
+
+config:
+  number:
+    of:
+      device:
+        per:
+          slot: 10
+
+service-gateway:
+  baseUrl: http://k8s-neuro-ingressp-74011e45bf-569147679.ap-southeast-1.elb.amazonaws.com/
+
+server:
+  launch:
+    config:
+      json:
+        path: /Users/ravikumar/nn/panasonicdata/config/server-launch-config.json
+  tomcat:
+    relaxed-query-chars: [ '{','}' ]
+firebase:
+  json:
+    path: /Users/ravikumar/nn/panasonicdata/config/firebase.json
+my:
+  rabbit:
+    mq:
+      username: neuro
+      password: Nero@1009
+is:
+  pionpremises:
+    server: false
+#  local:
+#    server: false
+
+push:
+  rebbitMq:
+    server:
+      ip: http://54.179.10.30:15672/
+  retry:
+    attempts: 3
+    attempts.hour: 5
+root:
+  private:
+    key:
+      dir: /Users/ravikumar/nn/var/opt/panasonic/rsa
+  storage:
+    dir: /var/opt/panasonic
+
+save:
+  exceptions:
+    in:
+      db: true
+
+devicetoken:
+  expiration:
+    mins: 30
+
+qms:
+  admin:
+    url:
+      p2: https://portal.signq.co.in/admin
+
+wns:
+  client:
+    secret: +0ZEEEX71FAngfna5H+uyIlL328Vr+lo
+    id: ms-app://s-1-15-2-3249291079-2626716603-94697252-1629332473-301689108-471940643-574348954
+
+big:
+  queue:
+    base:
+      dir: /panasonicdata/bigqueue

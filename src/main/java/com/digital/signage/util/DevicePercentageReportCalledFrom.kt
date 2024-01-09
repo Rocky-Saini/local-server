@@ -1,0 +1,8 @@
+package com.digital.signage.util
+
+enum class DevicePercentageReportCalledFrom {
+    DEVICE_PERCENTAGE_REPORT_CRON,
+    DEVICE_SUMMARY_REPORT_FROM_BROWSER,
+    DEVICE_SUMMARY_REPORT_CRON,
+    DEVICE_PERCENTAGE_REPORT_REQUEST_FROM_BROWSER
+}

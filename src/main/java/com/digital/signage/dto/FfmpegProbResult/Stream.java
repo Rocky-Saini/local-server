@@ -1,0 +1,41 @@
+package com.digital.signage.dto.FfmpegProbResult;
+
+public class Stream{
+    public int index;
+    public String codec_name;
+    public String codec_long_name;
+    public String profile;
+    public String codec_type;
+    public Object codec_time_base;
+    public String codec_tag_string;
+    public String codec_tag;
+    public int width;
+    public int height;
+    public int has_b_frames;
+    public String sample_aspect_ratio;
+    public String display_aspect_ratio;
+    public String pix_fmt;
+    public int level;
+    public String chroma_location;
+    public int refs;
+    public String is_avc;
+    public String nal_length_size;
+    public String r_frame_rate;
+    public String avg_frame_rate;
+    public String time_base;
+    public int start_pts;
+    public double start_time;
+    public int duration_ts;
+    public double duration;
+    public int bit_rate;
+    public int max_bit_rate;
+    public int bits_per_raw_sample;
+    public int bits_per_sample;
+    public int nb_frames;
+    public Object sample_fmt;
+    public int sample_rate;
+    public int channels;
+    public Object channel_layout;
+    public Disposition disposition;
+    public Tags tags;
+}
